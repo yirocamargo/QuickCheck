@@ -38,6 +38,7 @@ function TablaEquipos(){
     let ConttadorEquipos=0;
     return(
         <>
+        <h1>Lista de Equipos</h1>
         <Table id="datateble" striped bordered hover >
             <thead class="table-light">
                 <tr>
