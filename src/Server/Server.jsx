@@ -11,7 +11,7 @@ export async function listaEquipos(){
 }
 
     export async function findEquipoById(id){
-    const res = await fetch (API_URL+id);
+    const res = await fetch (API_URL+"equipo/"+id);
     const data = await res.json();
     return data;
 } 
@@ -26,3 +26,8 @@ export async function listaUsuarios(){
     }
 }
 
+export async function findUsuarioById(id){
+    const res = await fetch (API_URL+"usuarios/"+id);
+    const data = await res.json();
+    return data;
+} 

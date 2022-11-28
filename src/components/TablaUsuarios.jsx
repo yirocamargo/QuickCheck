@@ -8,7 +8,6 @@ function TablaUsuarios(){
     
     const [listaUsuario,setListaUsuario] = useState([]);
 
-
     async function listarUsuarios(){
         try{
             const res = await listaUsuarios();
@@ -16,7 +15,6 @@ function TablaUsuarios(){
         }catch (error){
 
         }
-
     }
 
     useEffect(()=>{
@@ -42,17 +40,16 @@ function TablaUsuarios(){
             <tbody class="table-group-divider">   
             {
               listaUsuario.map((usuario)=>(
-                
                 <tr key={usuario.id}>
                     <td>{++ConttadorEquipos}</td>
                     <td>{usuario.nombre}</td>
                     <td>{usuario.apellido}</td>
                     <td>{usuario.username}</td>
-                    <td>{"*********"}</td>
+                    <td type="password">{"*********"}</td>
                     <td>
                     {usuario.estado ?  "Activo" : "Inactivo" }
                     </td>
-                    <td><Link to={`/equipo/${usuario.id}`}>Ver Detalle</Link>
+                    <td><Link to={`/usuarios/${usuario.id}`}>Ver Detalle</Link>
                     </td>
                 </tr>
               ))
