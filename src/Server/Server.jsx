@@ -10,11 +10,30 @@ export async function listaEquipos(){
     }
 }
 
-    export async function findEquipoById(id){
+export async function findEquipoById(id){
     const res = await fetch (API_URL+"equipo/"+id);
     const data = await res.json();
     return data;
 } 
+
+export async function deleteEquipoById(id){
+    const options = {method:"DELETE"}
+    const res = await fetch (API_URL+"equipo/"+id,options);
+    const texto = await res.text();
+    return texto;
+} 
+
+export async function GuardarEquipos(equipo){
+    const options = {
+        method:"POST", 
+        headers:{"Content-type":"application/json"},
+        body:JSON.stringify(equipo)
+    }
+    const res = await fetch (API_URL+"equipo/",options);
+    const texto = await res.text();
+    return texto;
+}
+
 
 export async function listaUsuarios(){
     try {
@@ -31,3 +50,4 @@ export async function findUsuarioById(id){
     const data = await res.json();
     return data;
 } 
+
